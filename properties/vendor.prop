@@ -179,6 +179,9 @@ debug.stagefright.c2inputsurface=-1
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
 
+# Netflix
+ro.netflix.bsp_rev=Q8450-34634-1
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 vendor.pasr.activemode.enabled=false
