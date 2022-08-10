@@ -10,6 +10,8 @@
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
 
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
+
     <uses-sdk
         android:minSdkVersion="31"
         android:targetSdkVersion="31"/>
