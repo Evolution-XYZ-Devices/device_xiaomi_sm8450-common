@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Xiaomi Dolby</string>
+
+    <!-- Dolby Atmos -->
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_enable">Use Dolby Atmos</string>
+    <string name="dolby_profile_title">Choose a profile</string>
+    <string name="dolby_preset">Equalizer preset</string>
+    <string name="dolby_off">Off</string>
+    <string name="dolby_on">On</string>
+    <string name="dolby_low">Low</string>
+    <string name="dolby_medium">Medium</string>
+    <string name="dolby_high">High</string>
+    <string name="dolby_max">Max</string>
+    <string name="dolby_unknown">Unknown</string>
+    <string name="dolby_on_with_profile">On (%1$s)</string>
+    <string name="dolby_category_settings">Settings</string>
+    <string name="dolby_bass_enhancer">Bass enhancer</string>
+    <string name="dolby_dialogue_enhancer">Dialogue enhancer</string>
+    <string name="dolby_virtualizer">Surround virtualizer</string>
+    <string name="dolby_stereo_widening">Stereo widening</string>
+    <string name="dolby_volume_leveler">Volume leveler</string>
+    <string name="dolby_connect_headphones">Connect headphones</string>
+    <string name="dolby_reset_profile">Reset to defaults</string>
+    <string name="dolby_reset_profile_toast">Succesfully reset settings for %1$s profile</string>
+
+    <!-- Dolby Atmos: Sound Profiles -->
+    <string name="dolby_profile_dynamic">Dynamic</string>
+    <string name="dolby_profile_music">Music</string>
+    <string name="dolby_profile_video">Movie / Video</string>
+    <string name="dolby_profile_vocal">Voice</string>
+
+    <!-- Dolby Atmos: Equalizer presets -->
+    <string name="dolby_preset_default">Default</string>
+    <string name="dolby_preset_rock">Rock</string>
+    <string name="dolby_preset_jazz">Jazz</string>
+    <string name="dolby_preset_pop">Pop</string>
+    <string name="dolby_preset_classical">Classical</string>
+    <string name="dolby_preset_hiphop">Hip Hop</string>
+    <string name="dolby_preset_blues">Blues</string>
+    <string name="dolby_preset_electronic">Electronic</string>
+    <string name="dolby_preset_country">Country</string>
+    <string name="dolby_preset_dance">Dance</string>
+    <string name="dolby_preset_metal">Metal</string>
+</resources>
