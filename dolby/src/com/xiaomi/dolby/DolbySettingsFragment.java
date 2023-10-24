@@ -24,7 +24,7 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.widget.Switch;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.preference.ListPreference;
@@ -34,7 +34,6 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import com.xiaomi.dolby.R;
 
@@ -42,7 +41,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DolbySettingsFragment extends PreferenceFragment implements
-        OnPreferenceChangeListener, OnMainSwitchChangeListener {
+        OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
 
     private static final String TAG = "XiaomiDolbySettingsFragment";
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
@@ -186,7 +185,7 @@ public class DolbySettingsFragment extends PreferenceFragment implements
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         mDsOn = isChecked;
         mDolbyUtils.setDsOn(isChecked);
         mProfilePref.setEnabled(isChecked);
