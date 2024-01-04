@@ -48,6 +48,8 @@
         <boolean name="carrier_cross_sim_ims_available_bool" value="true" />
         <boolean name="carrier_b2c_enriched_calling_supported_bool" value="false" />
         <boolean name="carrier_call_progress_notification" value="true" />
+        <!-- PA: Enable LTE+ icon by default -->
+        <boolean name="hide_lte_plus_data_icon_bool" value="false"/>
     </carrier_config>
     <carrier_config mcc="001" mnc="01">
         <boolean name="carrier_volte_available_bool" value="true" />
