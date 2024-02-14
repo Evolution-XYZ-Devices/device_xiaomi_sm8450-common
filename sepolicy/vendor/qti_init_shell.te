@@ -1,0 +1,2 @@
+allow vendor_qti_init_shell proc:dir r_dir_perms;
+allow vendor_qti_init_shell proc:file rw_file_perms;

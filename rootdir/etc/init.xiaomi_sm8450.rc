@@ -169,6 +169,9 @@ on property:sys.boot_completed=1
     # Set thermal mode to mgame
     write /sys/devices/virtual/thermal/thermal_message/sconfig 20
 
+# Dynamically set IRQ affinity for KGSL and DRM
+    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.xiaomi_sm8450.sh
+
 on property:init.svc.vendor.charger=running
     chown system system /sys/class/backlight/panel0-backlight/brightness
     chown system system /sys/class/backlight/panel1-backlight/brightness

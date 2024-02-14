@@ -37,6 +37,9 @@
 /data/vendor/qxwz(/.*)? u:object_r:qx_oss_vendor_data_file:s0
 /mnt/vendor/persist/qxwz u:object_r:qx_oss_vendor_data_file:s0
 
+# Init
+/(vendor|system/vendor)/bin/init\.xiaomi_sm8450\.sh u:object_r:vendor_qti_init_shell_exec:s0
+
 # Mac Address
 /data/vendor/mac_addr(/.*)? u:object_r:vendor_mac_vendor_data_file:s0
 /vendor/bin/nv_mac u:object_r:vendor_wcnss_service_exec:s0
