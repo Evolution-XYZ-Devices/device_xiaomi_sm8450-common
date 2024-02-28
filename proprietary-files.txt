@@ -1372,7 +1372,7 @@ vendor/lib64/libqcrilNrLogger.so
 vendor/lib64/libqcrilNrPbmModule.so
 vendor/lib64/libqcrilNrQtiBus.so
 vendor/lib64/libqcrilNrQtiMutex.so
-vendor/lib64/libqcrilNrSmsModule.so
+vendor/lib64/libqcrilNrSmsModule.so|eec750187d50e0c6df179d10bd656ee026259f86
 vendor/lib64/libqcrilNrSocketModule.so
 vendor/lib64/libqcrilNrVoiceModule.so
 vendor/lib64/libqcrildataaidl.so
