@@ -237,94 +237,65 @@ vendor/lib/vendor.qti.diaghal@1.0.so
 vendor/lib64/vendor.qti.diaghal@1.0.so
 
 # Display HDR
-vendor/lib/libhdr_backlight_adapter.so
-vendor/lib/libhdr_tm.so
-vendor/lib/libhdrdynamic.so
-vendor/lib/libhdrdynamicootf.so
-vendor/lib64/libhdr_backlight_adapter.so
-vendor/lib64/libhdr_tm.so
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 
-# Display HWC
-vendor/bin/qdcmss
-vendor/etc/init/qdcmss.rc
-vendor/lib/libbacklight-calib.so
-vendor/lib/libdigital-dimming.so
-vendor/lib/libdpps.so
-vendor/lib/libmemutils.so
-vendor/lib/libqdcm-algo.so
-vendor/lib/libqdcm-json-mode-parser.so
-vendor/lib/libqdcm-mode-parser.so
-vendor/lib/libsnapdragoncolor-manager.so
-vendor/lib/libsnapdragoncolor-qdcm.so
-vendor/lib64/libbacklight-calib.so
-vendor/lib64/libdigital-dimming.so
-vendor/lib64/libdpps.so
-vendor/lib64/libmemutils.so
-vendor/lib64/libqdcm-algo.so
-vendor/lib64/libqdcm-json-mode-parser.so
-vendor/lib64/libqdcm-mode-parser.so
-vendor/lib64/libsnapdragoncolor-manager.so
-vendor/lib64/libsnapdragoncolor-qdcm.so
+# Display HDR - from LA.VENDOR.1.0.r1-24300-WAIPIO.QSSI14.0
+vendor/lib64/libhdr_backlight_adapter.so|9a15d9fb66728cb839d667c21781d2e242b9dfce
+vendor/lib64/libhdr_tm.so|9e20c6a4a8ebeca86cf1423421df3c0ecc8b6404
 
-# Display postprocessing
-vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/ppd
-vendor/etc/init/vendor.display.color@1.0-service.rc
-vendor/lib/libdisp-aba.so
-vendor/lib/vendor.display.color@1.0.so
-vendor/lib/vendor.display.color@1.1.so
-vendor/lib/vendor.display.color@1.2.so
-vendor/lib/vendor.display.color@1.3.so
-vendor/lib/vendor.display.color@1.4.so
-vendor/lib/vendor.display.color@1.5.so
-vendor/lib/vendor.display.color@1.6.so
-vendor/lib/vendor.display.color@1.7.so
-vendor/lib/vendor.display.postproc@1.0.so
-vendor/lib64/libdisp-aba.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.color@1.3.so
-vendor/lib64/vendor.display.color@1.4.so
-vendor/lib64/vendor.display.color@1.5.so
-vendor/lib64/vendor.display.color@1.6.so
-vendor/lib64/vendor.display.color@1.7.so
-vendor/lib64/vendor.display.postproc@1.0.so
+# Display HWC - from LA.VENDOR.1.0.r1-24300-WAIPIO.QSSI14.0
+vendor/bin/qdcmss|727147cbaf4d74f0eb38c534fda9beebdfec31f6
+vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
+vendor/lib64/libbacklight-calib.so|8f56454d00f04d289fe0eb3dbfb5975f3b06ad55
+vendor/lib64/libdigital-dimming.so|8c41c3e44fcef914398d98cd4c212c92242a061a
+vendor/lib64/libdpps.so|df889772bc05fbceaf0ee957e30dab1a07b523ec
+vendor/lib64/libmemutils.so|cb563ca045900f0c160f48adbb540b111bb2879c
+vendor/lib64/libmm-hdcpmgr.so|19a3b009e944bbf3dc4a08dc39ef7ec45d2d3d27
+vendor/lib64/libqdcm-algo.so|38a6c9785b5bc7f729154f088a76cb3eba699fa2
+vendor/lib64/libqdcm-json-mode-parser.so|9e8593ba091752e2f77757c265e46c41d6959e4b
+vendor/lib64/libqdcm-mode-parser.so|e0c9164971602c8c6964cae73c20ac14bbf8bd96
+vendor/lib64/libsnapdragoncolor-manager.so|2e92b5a326a12e5e4e711a91b9098a6308f2a84f
+vendor/lib64/libsnapdragoncolor-qdcm.so|13238df0b2cad0cf56938b66270d1ff280aa458f
 
-# Display SDM
-vendor/etc/display/DPU660.xml
-vendor/etc/display/DPU670.xml
-vendor/etc/display/DPU720.xml
-vendor/etc/display/DPU7__.xml
-vendor/etc/display/DPU820.xml
-vendor/etc/display/DPU830.xml
-vendor/etc/display/DPU860.xml
-vendor/etc/display/DPU8__.xml
-vendor/etc/display/DPU9__.xml
-vendor/etc/display/advanced_sf_offsets.xml
-vendor/etc/display/thermallevel_to_fps.xml
-vendor/lib/libdisplayqos.so
-vendor/lib/libdisplayskuutils.so
-vendor/lib/libqseed3.so
-vendor/lib/librcmask.so
-vendor/lib/libsdm-color.so
-vendor/lib/libsdm-colormgr-algo.so
-vendor/lib/libsdm-disp-vndapis.so
-vendor/lib/libsdmextension.so
-vendor/lib/libtestutils.so
-vendor/lib/libtinyxml2_1.so
-vendor/lib64/libdisplayqos.so
-vendor/lib64/libdisplayskuutils.so
-vendor/lib64/libqseed3.so
-vendor/lib64/librcmask.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-colormgr-algo.so
-vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmextension.so
-vendor/lib64/libtestutils.so
-vendor/lib64/libtinyxml2_1.so
+# Display postprocessing - from LA.VENDOR.1.0.r1-24300-WAIPIO.QSSI14.0
+vendor/bin/hw/vendor.display.color@1.0-service|9f37be517ad778857bfe94b78ba3fbf2e90e3967
+vendor/bin/ppd|7c7c7ea24717c518bc4a768fb606b9a2ab72e16e
+vendor/etc/init/vendor.display.color@1.0-service.rc|fc58968025ec9f09b4fedee0b9daecc6a56c8373
+vendor/lib64/libdisp-aba.so|6658f3571228dd99bff87de2a4c48168e0fd0030
+vendor/lib64/vendor.display.color@1.0.so|76e84677fefbe97a0c9d33646fca2834e77a3b6f
+vendor/lib64/vendor.display.color@1.1.so|3aa79bbf7592472d87c29f91a106141eff8a9a74
+vendor/lib64/vendor.display.color@1.2.so|8b5ed3c2b39aa38f6194f2ed3872166f88b8ad98
+vendor/lib64/vendor.display.color@1.3.so|1ff2c50e6b8c0bc95f3476aa5b066024e0fc9261
+vendor/lib64/vendor.display.color@1.4.so|6e4cffe7b1a287dee9c4fb9b8e08ddac50b916b4
+vendor/lib64/vendor.display.color@1.5.so|0474d3d9123fd38538a3cd1e3c267608d71b7126
+vendor/lib64/vendor.display.color@1.6.so|7ce5a9115be5a75ff31bc1b58ab7146c0ec1eda9
+vendor/lib64/vendor.display.color@1.7.so|dfe7e088fb0875bb0acacfca3756692937d50d2f
+vendor/lib64/vendor.display.postproc@1.0.so|f82e704e275c25ef27ff37cdbbfb2360e53c2611
+
+# Display SDM - from LA.VENDOR.1.0.r1-24300-WAIPIO.QSSI14.0
+vendor/etc/display/DPU660.xml|b26dd73e361546d89bf3d7082a471703dc6ac2cb
+vendor/etc/display/DPU670.xml|e5131a60ceff29ca5eb561eec7eddadef1d0486f
+vendor/etc/display/DPU720.xml|4e54e8712d65773eb87867bf64a4cb98ea9bb8c3
+vendor/etc/display/DPU7__.xml|c056f3cb9fa123ca3de5b2a9775c184dddf25b9d
+vendor/etc/display/DPU820.xml|35afcb7834d13eacc8f14d2ff4ac5132bb01a563
+vendor/etc/display/DPU830.xml|dcedb842003ec2242a57b545d6695bd5899b5dbb
+vendor/etc/display/DPU860.xml|22ba44c290e2f23992df4da959945349944d5208
+vendor/etc/display/DPU8__.xml|2360038d60e9dff36d7f14a59a25da74bac1abe4
+vendor/etc/display/DPU9__.xml|ed8ec4a7a6852d8340bd98448db9f13634083edd
+vendor/etc/display/advanced_sf_offsets.xml|29b6b0554d6393a8be90f52fce010946abd38d52
+vendor/etc/display/thermallevel_to_fps.xml|bc38035c8f41308fc25cc30969fbbf16ab86c43f
+vendor/lib64/libdisplayqos.so|acbac2793b6f31c50cc29e8e7ed10c469af276e6
+vendor/lib64/libdisplayskuutils.so|1b2e0411cafb43fd6343c11fccb0ecd10a4b302f
+vendor/lib64/libgame_enhance.so|3b2c2bd8d051729061e26c88d557edeb9cc6a002
+vendor/lib64/libqseed3.so|e29f67d1f07318cb50732485db3a8f65225afb7e
+vendor/lib64/librcmask.so|42dce66d4074f5a3f10477ef32aa29db89c005c8
+vendor/lib64/libsdm-color.so|7b789a14eed2a22c81a549b5d1c4e13bfcf46402
+vendor/lib64/libsdm-colormgr-algo.so|6b4c2a4944a22641120a85b787f378a09bbeecdf
+vendor/lib64/libsdm-disp-vndapis.so|6e18b8b6f47a3a990e53579bab0ddfadc0c1f9bd
+vendor/lib64/libsdmextension.so|bfb7e1e6c3e113da6d938bad5d06f4a8953eb53a
+vendor/lib64/libtestutils.so|47e00c3f2e8170d47562c3ac223cc9e4bbca01fe
+vendor/lib64/libtinyxml2_1.so|839d7307eecadcf502978f2d0ca1d083bb57f8cc
 
 # DPM
 system_ext/bin/dpmd
@@ -1739,7 +1710,6 @@ vendor/etc/wfdconfig.xml
 vendor/lib/libmm-hdcpmgr.so
 vendor/lib64/hw/vendor.qti.hardware.wifidisplaysession@1.0-impl.so
 vendor/lib64/libFileMux_proprietary.so
-vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmmosal_vendor.so
 vendor/lib64/libmmrtpdecoder_vendor.so
 vendor/lib64/libmmrtpencoder_vendor.so
