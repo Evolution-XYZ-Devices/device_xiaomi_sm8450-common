@@ -162,6 +162,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
     libdrm.vendor
 
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Dumpstate
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.1.vendor
