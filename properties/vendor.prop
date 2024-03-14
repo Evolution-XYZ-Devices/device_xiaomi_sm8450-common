@@ -112,6 +112,10 @@ vendor.display.enable_rc_support=1
 vendor.display.use_smooth_motion=1
 vendor.display.vds_allow_hwc=0
 
+# Dolby Atmos
+vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
+
 # DPM
 persist.vendor.dpm.vndr.feature=1
 persist.vendor.dpm.vndr.halservice.enable=1
