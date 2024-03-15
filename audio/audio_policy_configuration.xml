@@ -375,8 +375,6 @@
 
         </module>
 
-
-
         <!-- Usb Audio HAL -->
         <module name="usb" halVersion="2.0">
             <mixPorts>
@@ -396,6 +394,9 @@
                        sources="usb_accessory output"/>
             </routes>
         </module>
+
+        <!-- Bluetooth Audio HAL for hearing aid -->
+        <xi:include href="/vendor/etc/bluetooth_hearing_aid_audio_policy_configuration.xml"/>
 
         <!-- Remote Submix Audio HAL -->
         <xi:include href="/vendor/etc/r_submix_audio_policy_configuration.xml"/>
