@@ -17,10 +17,17 @@
 package com.xiaomi.dolby;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.AudioAttributes;
 import android.media.AudioDeviceAttributes;
+import android.media.AudioDeviceCallback;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
+import android.media.AudioManager.AudioPlaybackCallback;
+import android.media.AudioPlaybackConfiguration;
+import android.media.session.MediaSessionManager;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.xiaomi.dolby.R;
@@ -44,11 +51,40 @@ public final class DolbyUtils {
     private static DolbyUtils mInstance;
     private DolbyAtmos mDolbyAtmos;
     private Context mContext;
+    private AudioManager mAudioManager;
+    private Handler mHandler = new Handler();
+    private boolean mCallbacksRegistered = false;
+
+    // Restore current profile on every media session
+    private final AudioPlaybackCallback mPlaybackCallback = new AudioPlaybackCallback() {
+        @Override
+        public void onPlaybackConfigChanged(List<AudioPlaybackConfiguration> configs) {
+            boolean isPlaying = configs.stream().anyMatch(
+                    c -> c.getPlayerState() == AudioPlaybackConfiguration.PLAYER_STATE_STARTED);
+            if (DEBUG) Log.d(TAG, "onPlaybackConfigChanged isPlaying=" + isPlaying);
+            if (isPlaying)
+                setCurrentProfile();
+        }
+    };
+
+    // Restore current profile on audio device change
+    private final AudioDeviceCallback mAudioDeviceCallback = new AudioDeviceCallback() {
+        public void onAudioDevicesAdded(AudioDeviceInfo[] addedDevices) {
+            if (DEBUG) Log.d(TAG, "onAudioDevicesAdded");
+            setCurrentProfile();
+        }
+
+        public void onAudioDevicesRemoved(AudioDeviceInfo[] removedDevices) {
+            if (DEBUG) Log.d(TAG, "onAudioDevicesRemoved");
+            setCurrentProfile();
+        }
+    };
 
     private DolbyUtils(Context context) {
         mContext = context;
         mDolbyAtmos = new DolbyAtmos(EFFECT_PRIORITY, 0);
-        mDolbyAtmos.setEnabled(mDolbyAtmos.getDsOn());
+        mAudioManager = context.getSystemService(AudioManager.class);
+        if (DEBUG) Log.d(TAG, "initalized");
     }
 
     public static synchronized DolbyUtils getInstance(Context context) {
@@ -59,12 +95,19 @@ public final class DolbyUtils {
     }
 
     public void onBootCompleted() {
-        if (DEBUG) Log.d(TAG, "Boot completed");
+        if (DEBUG) Log.d(TAG, "onBootCompleted");
+
+        // Restore current profile now and on certain audio changes.
+        final boolean dsOn = getDsOn();
+        mDolbyAtmos.setEnabled(dsOn);
+        registerCallbacks(dsOn);
+        if (dsOn)
+            setCurrentProfile();
 
         // Restore speaker virtualizer, because for some reason it isn't
         // enabled automatically at boot.
-        final AudioDeviceAttributes device = mContext.getSystemService(AudioManager.class)
-                .getDevicesForAttributes(ATTRIBUTES_MEDIA).get(0);
+        final AudioDeviceAttributes device =
+                mAudioManager.getDevicesForAttributes(ATTRIBUTES_MEDIA).get(0);
         final boolean isOnSpeaker = (device.getType() == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER);
         final boolean spkVirtEnabled = getSpeakerVirtualizerEnabled();
         if (DEBUG) Log.d(TAG, "isOnSpeaker=" + isOnSpeaker + " spkVirtEnabled=" + spkVirtEnabled);
@@ -83,10 +126,37 @@ public final class DolbyUtils {
         }
     }
 
+    private void setCurrentProfile() {
+        if (!getDsOn()) {
+            if (DEBUG) Log.d(TAG, "setCurrentProfile: skip, dolby is off");
+            return;
+        }
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        int profile = Integer.parseInt(prefs.getString(
+                DolbySettingsFragment.PREF_PROFILE, "0" /*dynamic*/));
+        setProfile(profile);
+    }
+
+    private void registerCallbacks(boolean register) {
+        if (DEBUG) Log.d(TAG, "registerCallbacks(" + register + ") mCallbacksRegistered=" + mCallbacksRegistered);
+        if (register && !mCallbacksRegistered) {
+            mAudioManager.registerAudioPlaybackCallback(mPlaybackCallback, mHandler);
+            mAudioManager.registerAudioDeviceCallback(mAudioDeviceCallback, mHandler);
+            mCallbacksRegistered = true;
+        } else if (!register && mCallbacksRegistered) {
+            mAudioManager.unregisterAudioPlaybackCallback(mPlaybackCallback);
+            mAudioManager.unregisterAudioDeviceCallback(mAudioDeviceCallback);
+            mCallbacksRegistered = false;
+        }
+    }
+
     public void setDsOn(boolean on) {
         checkEffect();
         if (DEBUG) Log.d(TAG, "setDsOn: " + on);
         mDolbyAtmos.setDsOn(on);
+        registerCallbacks(on);
+        if (on)
+            setCurrentProfile();
     }
 
     public boolean getDsOn() {
