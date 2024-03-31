@@ -1,16 +1,5 @@
-# Audio
-/dev/socket/audio_hw_socket u:object_r:audio_socket:s0
-/dev/socket/audio_us_socket_0 u:object_r:audio_socket:s0
-/dev/socket/audio_us_socket_1 u:object_r:audio_socket:s0
-/dev/xlog u:object_r:sound_device:s0
-/sys/devices/platform/soc/[a-z0-9]+.i2c/i2c-+[0-9]/[0-9]+-00+[a-z0-9]+[a-z0-9]/f0_value u:object_r:sysfs_f0_value:s0
-
-# Battery
-/(vendor|system/vendor)/bin/batterysecret u:object_r:batterysecret_exec:s0
-
 # Camera
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.quickcamera@1.0-service u:object_r:hal_quickcamera_default_exec:s0
-/mnt/vendor/persist/camera(/.*)? u:object_r:camera_persist_file:s0
 /vendor/lib(64)?/libQnnHtpV69Stub\.so u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libQnnHtp\.so u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libSNPE\.so u:object_r:same_process_hal_file:s0
@@ -34,17 +23,6 @@
 /vendor/lib(64)?/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel\.so u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/rfsa/adsp/libsnpe_dsp_v68_domains_v3_skel\.so u:object_r:same_process_hal_file:s0
 
-# CIT
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.sensor.citsensorservice@1.1-service u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
-
-# Diag
-/data/vendor/modem(/.*)? u:object_r:vendor_modem_data_file:s0
-
-# Display
-/dev/mi_display/disp_feature u:object_r:vendor_displayfeature_device:s0
-/sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)? u:object_r:vendor_sysfs_displayfeature:s0
-
 # Fingerprint
 /data/vendor/fpc(/.*)? u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/fpdump(/.*)? u:object_r:vendor_fingerprint_data_file:s0
@@ -59,56 +37,15 @@
 /data/vendor/qxwz(/.*)? u:object_r:qx_oss_vendor_data_file:s0
 /mnt/vendor/persist/qxwz u:object_r:qx_oss_vendor_data_file:s0
 
-# IR
-/dev/ir_spi u:object_r:ir_spi_device:s0
-
 # Mac Address
 /data/vendor/mac_addr(/.*)? u:object_r:vendor_mac_vendor_data_file:s0
 /vendor/bin/nv_mac u:object_r:vendor_wcnss_service_exec:s0
 
-# Mlipay
-/(vendor|system/vendor)/bin/mlipayd@1.1 u:object_r:hal_mlipay_default_exec:s0
-
-# Modem
-/dev/smd8 u:object_r:vendor_radio_smd_device:s0
-
 # Powershare
 /vendor/bin/hw/vendor\.lineage\.powershare@1\.0-service\.xiaomi u:object_r:hal_lineage_powershare_default_exec:s0
 
-# Sensors
-/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@2.1-service\.xiaomi-multihal u:object_r:hal_sensors_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service u:object_r:vendor_hal_sensorcommunicate_default_exec:s0
-/dev/stmvl53l5 u:object_r:stmvl53l5_device:s0
-
 # Thermal
-/(vendor|system/vendor)/bin/mi_thermald u:object_r:mi_thermald_exec:s0
-/data/vendor/thermal(/.*)? u:object_r:thermal_data_file:s0
-/sys/class/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
-/sys/class/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
 /sys/class/thermal/thermal_zone87/temp u:object_r:sysfs_thermal:s0
-/sys/devices/virtual/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
-/sys/devices/virtual/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
 
 # Touchscreen
-/(vendor|system/vendor)/bin/touch_report u:object_r:touchreport_exec:s0
-/data/vendor/touch(/.*)? u:object_r:vendor_data_touchreport_file:s0
-/dev/xiaomi-touch u:object_r:touchfeature_device:s0
-/sys/devices/virtual/touch/touch_dev/abnormal_event u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/clicktouch_raw u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/ear_sensor u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/ear_sensor_data u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/enable_touch_delta u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/enable_touch_raw u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/force_calibration u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/hold_sensor u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/palm_sensor u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/rx_num u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/suspend_state u:object_r:sysfs_touch_suspend:s0
-/sys/devices/virtual/touch/touch_dev/touch_doze_analysis u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_ic_buffer u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_sensor u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_sensor_ctrl u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_thp_(.*) u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/tx_num u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/update_rawdata u:object_r:sysfs_touch_hostprocess:s0
 /sys/devices/virtual/touch/tp_dev/fod_status u:object_r:sysfs_tp_fodstatus:s0

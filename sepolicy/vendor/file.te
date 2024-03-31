@@ -1,18 +1,5 @@
-# Audio
-type sysfs_f0_value, fs_type, sysfs_type;
-type audio_socket, file_type;
-
-# Battery
-type vendor_sysfs_qcom_battery, fs_type, sysfs_type;
-
-# Camera
-type camera_persist_file, file_type, mlstrustedobject, vendor_persist_type;
-
-# Diag
-type vendor_modem_data_file, data_file_type, file_type;
-
-# Display
-type vendor_sysfs_displayfeature, fs_type, sysfs_type;
+# Fastcharge
+type sysfs_fastcharge, sysfs_type, fs_type;
 
 # Fingerprint
 type vendor_fingerprint_data_file, data_file_type, file_type;
@@ -25,16 +12,5 @@ type vendor_ins_vendor_data_file, data_file_type, file_type;
 # Mac Address
 type vendor_mac_vendor_data_file, data_file_type, file_type, mlstrustedobject;
 
-# Thermal
-type sys_thermal_wifi_limit, fs_type, sysfs_type;
-type sys_thermal_flash_state, fs_type, sysfs_type;
-type thermal_data_file, data_file_type, file_type;
-
 # Touchscreen
-type proc_tp_file, fs_type, proc_type;
-type proc_tp_lockdown, fs_type, proc_type;
-type sysfs_touch_hostprocess, fs_type, sysfs_type;
-type sysfs_touch_suspend, fs_type, sysfs_type;
 type sysfs_tp_fodstatus, fs_type, sysfs_type;
-type sysfs_tp_virtual_prox, fs_type, sysfs_type;
-type vendor_data_touchreport_file, data_file_type, file_type;

@@ -1,7 +1,6 @@
 set_prop(vendor_init, vendor_fp_prop)
 set_prop(vendor_init, vendor_fp_info_prop)
 set_prop(vendor_init, vendor_thermal_normal_prop)
-set_prop(vendor_init, vendor_nfc_mi_prop)
 set_prop(vendor_init, vendor_ssr_prop)
 set_prop(vendor_init, vendor_edgnss_qxwz_downloadak_prop)
 set_prop(vendor_init, vendor_qcc_prop)

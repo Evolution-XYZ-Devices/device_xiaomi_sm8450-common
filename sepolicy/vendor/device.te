@@ -1,20 +1,2 @@
-# Audio
-type sound_device, dev_type, mlstrustedobject;
-
-# Camera
-type stmvl53l5_device, dev_type;
-
-# Display
-type vendor_displayfeature_device, dev_type;
-
 # Fingerprint
 type vendor_fingerprint_device, dev_type;
-
-# IR
-type ir_spi_device, dev_type;
-
-# Modem
-type vendor_radio_smd_device, dev_type;
-
-# Touchscreen
-type touchfeature_device, dev_type;

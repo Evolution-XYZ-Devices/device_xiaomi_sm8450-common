@@ -1,6 +1,0 @@
-allow hal_graphics_composer vendor_hal_citsensorservice_xiaomi_default:binder transfer;
-allow hal_graphics_composer vendor_hal_citsensorservice_xiaomi_hwservice:hwservice_manager find;
-
-binder_call(hal_graphics_composer_default, vendor_hal_citsensorservice_xiaomi_default)
-
-set_prop(hal_graphics_composer_default, vendor_display_prop)
